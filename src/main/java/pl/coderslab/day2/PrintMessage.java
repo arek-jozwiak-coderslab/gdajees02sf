@@ -1,4 +1,4 @@
-package pl.coderslab.day1.day2;
+package pl.coderslab.day2;
 
 @FunctionalInterface
 public interface PrintMessage {

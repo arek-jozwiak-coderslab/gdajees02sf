@@ -51,7 +51,7 @@ public class Main2 {
 
 
 
-Collections.sort(people2, (p1, p2) -> {return 0;});
+Collections.sort(people2, (p1, p2) ->  p1.getLastName().compareTo(p2.getLastName()));
 
     }
 }
