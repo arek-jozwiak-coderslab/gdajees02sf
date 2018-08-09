@@ -6,11 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping("/home")
 public class HomeController {
 
     private final CityComponent cityComponent;
-
-
 
     @Autowired
     public HomeController(CityComponent cityComponent) {
@@ -28,7 +27,7 @@ public class HomeController {
 
 
 
-        return "Witaj w: " + cityComponent.getCity()
+        return "<h1>asdasd</h1> Witaj w: " + cityComponent.getCity()
                 + cityComponent.getPeopleComponent().getPeople();
     }
 }
