@@ -21,7 +21,8 @@ public class CartController {
     @ResponseBody
     public String addtocart(Model model) {
         Random rand = new Random();
-        cart.addToCart(new CartItem(1, new Product("prod" + rand.nextInt(10), rand.nextDouble())));
+        Product newProduct = new Product("prod" + rand.nextInt(10), rand.nextDouble());
+        cart.addToCart(new CartItem(1, newProduct));
         return "addtocart";
     }
 

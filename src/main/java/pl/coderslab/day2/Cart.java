@@ -23,7 +23,16 @@ public class Cart {
     }
 
     public void addToCart(CartItem cartItem) {
-        cartItems.add(cartItem);
+        boolean isNew = true;
+        for (CartItem item : cartItems) {
+    if (item.getProduct().getName().equals(cartItem.getProduct().getName())) {
+        item.setQuantity(item.getQuantity() + 1);
+        isNew = false;
+    }
+        }
+        if (isNew) {
+            cartItems.add(cartItem);
+        }
     }
 
 
