@@ -1,5 +1,6 @@
 package pl.coderslab.day2;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,10 +13,15 @@ import java.util.Random;
 public class CartController {
 
     private final Cart cart;
-
+    @Autowired
     public CartController(Cart cart) {
         this.cart = cart;
     }
+
+    public CartController(Cart cart, String s) {
+        this.cart = cart;
+    }
+
 
     @RequestMapping("/addtocart")
     @ResponseBody

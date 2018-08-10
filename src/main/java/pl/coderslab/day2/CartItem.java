@@ -24,4 +24,17 @@ public class CartItem {
     public void setProduct(Product product) {
         this.product = product;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        CartItem cartItem = (CartItem) o;
+
+        if (quantity != null ? !quantity.equals(cartItem.quantity) : cartItem.quantity != null) return false;
+        return product != null ? product.equals(cartItem.product) : cartItem.product == null;
+    }
+
+
 }

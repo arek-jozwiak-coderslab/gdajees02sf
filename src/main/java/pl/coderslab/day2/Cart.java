@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -25,15 +26,22 @@ public class Cart {
     public void addToCart(CartItem cartItem) {
         boolean isNew = true;
         for (CartItem item : cartItems) {
-    if (item.getProduct().getName().equals(cartItem.getProduct().getName())) {
-        item.setQuantity(item.getQuantity() + 1);
-        isNew = false;
-    }
+            if (item.getProduct().getName().equals(cartItem.getProduct().getName())) {
+                item.setQuantity(item.getQuantity() + 1);
+                isNew = false;
+            }
         }
+
         if (isNew) {
             cartItems.add(cartItem);
         }
     }
 
+//    public void addToCartStream(CartItem cartItem) {
+//        cartItems.stream()
+//                .filter(a -> a.getProduct().getName().equals(cartItem.getProduct().getName())).findFirst()
+//                .ifPresent(c -> c.setQuantity(c.getQuantity()));
+//
+//    }
 
 }
