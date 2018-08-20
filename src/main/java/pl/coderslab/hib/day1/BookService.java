@@ -2,7 +2,6 @@ package pl.coderslab.hib.day1;
 
 
 import org.springframework.stereotype.Service;
-import pl.coderslab.hib.day1.dao.BookDao;
 
 @Service
 public class BookService {
@@ -24,5 +23,6 @@ public class BookService {
     public void delete(Book entity) {
         bookDao.delete(entity);
     }
+    public void update(Book entity) {bookDao.update(entity);}
 
 }

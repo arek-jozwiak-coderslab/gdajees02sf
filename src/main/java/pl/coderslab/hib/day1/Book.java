@@ -13,16 +13,19 @@ public class Book {
 
     private String title;
 
+    @ManyToOne
+    private Author author;
+
     private String isbnA;
-    private String author;
+
     private String publisher;
     private String description;
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 

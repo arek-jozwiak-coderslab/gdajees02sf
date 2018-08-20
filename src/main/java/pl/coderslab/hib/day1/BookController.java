@@ -1,10 +1,8 @@
 package pl.coderslab.hib.day1;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import pl.coderslab.hib.day1.dao.BookDao;
 
 @Controller
 public class BookController {
@@ -29,11 +27,22 @@ public class BookController {
     @RequestMapping("/book/find")
     public String findBook() {
         Book book =    bookService.findById(1L);
+
+        book.getAuthor();
+
+        return "::: "+ book.toString();
+    }
+    @ResponseBody
+    @RequestMapping("/book/update")
+    public String updateBook() {
+        Book book =    bookService.findById(1L);
+        book.setTitle("New Title");
+        bookService.update(book);
         return "::: "+ book.toString();
     }
 
     @ResponseBody
-    @RequestMapping("/book/find")
+    @RequestMapping("/book/delete")
     public String removeBook() {
         Book book =    bookService.findById(1L);
         bookService.delete(book);
