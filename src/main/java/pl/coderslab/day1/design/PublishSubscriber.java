@@ -1,5 +1,8 @@
 package pl.coderslab.day1.design;
 
+import pl.coderslab.day1.design.interfaces.Observer;
+import pl.coderslab.day1.design.interfaces.Subject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +29,7 @@ public class PublishSubscriber implements Subject {
     }
 
     @Override
-    public void dettach(Observer observer) {
+    public void detach(Observer observer) {
         observers.remove(observer);
     }
 
@@ -38,7 +41,7 @@ public class PublishSubscriber implements Subject {
     }
 
 
-    public void updatePost(Post post) {
+    public void update(Post post) {
         System.out.println("DO STH");
         viewCount++;
         notifyObservers(post);
